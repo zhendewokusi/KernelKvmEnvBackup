@@ -1,0 +1,17 @@
+qemu-system-aarch64 \                                             
+-cpu cortex-a53 \
+-m 6G \
+-machine type=virt,virtualization=on,gic-version=3 \
+-smp 4 \
+-kernel ~/kernel/arm64/Image  \
+-initrd ~/kernel/busybox-1.36.1/_install/rootfs.cpio  \
+-append "console=ttyAMA0 root=/dev/ram0 rdinit=/linuxrc" \
+-nographic \
+-serial mon:stdio \
+-device virtio-net-device,netdev=net0 \
+-netdev user,id=net0 \
+-d int,guest_errors,cpu_reset \
+-D /tmp/qemu.log
+
+./vm run --name guest -c 1 -m 2G -k Image -i rootfs.img.gz
+
