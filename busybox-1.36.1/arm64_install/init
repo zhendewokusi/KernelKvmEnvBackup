@@ -1,0 +1,6 @@
+#!/bin/sh
+mount -t proc none /proc
+mount -t sysfs none /sys
+/sbin/mdev -s
+echo -e "\nBoot took 17518.70 seconds\n"
+exec /bin/sh

@@ -1,0 +1,9 @@
+echo "----------mount all in fstab----------------"
+/bin/mount -a #读取/etc/fstab，加载文件系统
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+echo "****************Hello Linux******************"
+echo "Kernel Version:linux-6.11-rc7"
+echo "***********************************************"

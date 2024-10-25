@@ -42,7 +42,9 @@ arm64交叉工具链下载地址：https://developer.arm.com/downloads/-/arm-gnu
 ARCH=arm64 CROSS_COMPILE=../toolchains/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu- make defconfig
 ARCH=arm64 CROSS_COMPILE=../toolchains/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu- make all -j32
 
-编译busybox-1.36.1
+编译busybox-1.36.1:
+
+1. CONFIG_STATIC=y CONFIG_TC=n
 ARCH=arm64 CROSS_COMPILE=../toolchains/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu- make defconfig
 menuconfig打开静态编译（setting->Build Options  Build static binary）
 ARCH=arm64 CROSS_COMPILE=../toolchains/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu- make menuconfig

@@ -13,5 +13,4 @@ qemu-system-aarch64 \
 -d int,guest_errors,cpu_reset \
 -D /tmp/qemu.log
 
-./vm run --name guest -c 1 -m 2G -k Image -i rootfs.img.gz
-
+./lkvm  run --name guest -c 1 -m 2G -k Image -i rootfs.kvm.cpio
